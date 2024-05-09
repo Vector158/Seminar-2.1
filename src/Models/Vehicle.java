@@ -1,6 +1,4 @@
-package Services;
-
-import Models.EnergyType;
+package Models;
 
 public abstract class Vehicle {
 
@@ -57,5 +55,36 @@ public abstract class Vehicle {
         }else{
             this.eType = EnergyType.not_specified;
         }
+    }
+
+    //default constructor
+    public Vehicle(){
+        setId();
+        setTitle("Vehicle");
+        setVehicleCode();
+        setPrice(10.00f);
+        setQuantity(1);
+        seteType(EnergyType.not_specified);
+    }
+    //custom constructor
+    public Vehicle( String title, String vehicleCode, float price, int quantity, EnergyType eType) {
+        setId();
+        setTitle(title);
+        setVehicleCode();
+        setPrice(price);
+        setQuantity(quantity);
+        seteType(eType);
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "ID=" + ID +
+                ", title='" + title + '\'' +
+                ", vehicleCode='" + vehicleCode + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", eType=" + eType +
+                '}';
     }
 }
